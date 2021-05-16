@@ -1,11 +1,16 @@
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
+from flask_admin import Admin
+from flask_admin.contrib.sqla import ModelView
 from datetime import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+
+admin=Admin(app)
+
 
 
 class BlogPost(db.Model):
@@ -17,6 +22,8 @@ class BlogPost(db.Model):
 
     def __repr__(self):
         return 'Blog post ' + str(self.id)
+
+admin.add_view(ModelView(BlogPost, db.session))
 
 
 @app.route('/')
