@@ -111,7 +111,7 @@ def contact():
 @app.route("/auth", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        if request.form.get("username") == "admin" and request.form.get("password") == "admin":
+        if request.form.get("username") == "admin" and request.form.get("password") == "rajatsaxena":
             session['logged_in'] = True
             return redirect("/admin")
         else:
