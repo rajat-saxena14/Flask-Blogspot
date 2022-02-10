@@ -9,3 +9,7 @@ Link : https://flaskblogpostapp.herokuapp.com/
 
 Auto Deployed master branch on the same pipeline at heroku
 Link : https://flaskblogspot.herokuapp.com/
+
+Demo GIF
+
+![Alt Text](/static/img/flaskblogpost.gif)
